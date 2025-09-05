@@ -22,7 +22,7 @@ export default function Upload() {
       formData.append("questionCount", options.questionCount.toString());
       formData.append("userId", user?.id);
       formData.append("noteSetDescription", options.noteSetDescription);
-
+      //todo: add api
       const API = "http://localhost:3001";
 
       // Simulate upload progress

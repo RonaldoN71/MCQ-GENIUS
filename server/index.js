@@ -14,6 +14,6 @@ app.use(
 app.listen(PORT, () => {
   console.log(` PDF Processing Server running on port ${PORT}`);
   console.log(`Endpoints:`);
-  console.log(`   POST /api/process-document - Process PDF/Image and generate MCQs`);
+  console.log(` POST /api/process-document - Process PDF/Image and generate MCQs`);
   console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
 });
