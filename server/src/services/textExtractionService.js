@@ -1,5 +1,5 @@
 import fs from "fs/promises"; // changes this
-import PdfParse from "pdf-parse";
+import PdfParse from "pdf-parse/lib/pdf-parse.js";
 import  officeParser  from "officeparser";
 import pdf2pic from "pdf2pic";
 import sharp from "sharp";
