@@ -92,7 +92,7 @@ export function QuizInterface({ questions, onComplete }) {
                   quiz-option flex items-center p-4 border rounded-lg cursor-pointer transition-all
                   ${
                     isSelected
-                      ? "selected bg-primary text-primary-foreground border-primary shadow-md"
+                      ? "selected bg-blue-50 text-blue-900 border-primary shadow-md"
                       : "border-border hover:bg-accent hover:border-primary"
                   }`}
                 data-testid={`option-${index}`}
@@ -113,7 +113,7 @@ export function QuizInterface({ questions, onComplete }) {
                     w-8 h-8 border-2 rounded-full flex items-center justify-center text-sm font-medium mr-4
                     ${
                       isSelected
-                        ? "border-primary-foreground bg-primary-foreground text-primary"
+                        ? "border-primary bg-primary text-white"
                         : "border-border"
                     }`}
                   >
@@ -121,7 +121,7 @@ export function QuizInterface({ questions, onComplete }) {
                   </span>
                   <span
                     className={
-                      isSelected ? "text-primary-foreground font-medium" : "text-foreground"
+                      isSelected ? "text-blue-900 font-semibold" : "text-foreground"
                     }
                   >
                     {option}
