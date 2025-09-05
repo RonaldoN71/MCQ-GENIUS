@@ -18,7 +18,7 @@ export function Navigation() {
             <div className="bg-primary text-primary-foreground rounded-lg p-2">
               <Brain className="h-6 w-6" />
             </div>
-            <h1 className="text-xl font-bold text-foreground">MCQ Generator</h1>
+            <h1 className="text-xl font-bold text-foreground">MCQ Genius</h1>
           </Link>
           
           {/* Right-side user info + auth */}
