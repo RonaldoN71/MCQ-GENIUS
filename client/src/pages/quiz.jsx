@@ -5,6 +5,7 @@ import { Navigation } from "../components/navigation";
 import { ProgressBreadcrumb } from "../components/progress-breadcrumb";
 import { QuizInterface } from "../components/quiz-interface";
 import { QuizResults } from "../components/quiz-results";
+import { AnswerReview } from "../components/answer-review";
 import { useLocation } from "wouter";
 import { toast } from "../hooks/use-toast";
 import { useQuizStore } from "../store/quizStore"; // ✅ Zustand
@@ -14,6 +15,8 @@ export default function QuizPage() {
   const [, setLocation] = useLocation();
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [quizResults, setQuizResults] = useState(null);
+  const [showAnswerReview, setShowAnswerReview] = useState(false);
+  const [userAnswers, setUserAnswers] = useState({});
 
   const quiz = useQuizStore((state) => state.quiz);
 
@@ -96,19 +99,23 @@ export default function QuizPage() {
   ];
 
   const handleQuizComplete = (answers, timeTaken) => {
+    setUserAnswers(answers); // Store user answers for review
     submitAnswersMutation.mutate({ answers, timeTaken });
   };
 
   const handleViewAnswers = () => {
-    toast({
-      title: "Feature Coming Soon",
-      description: "Answer review will be available in the next update.",
-    });
+    setShowAnswerReview(true);
+  };
+
+  const handleBackToResults = () => {
+    setShowAnswerReview(false);
   };
 
   const handleRetakeQuiz = () => {
     setQuizCompleted(false);
     setQuizResults(null);
+    setShowAnswerReview(false);
+    setUserAnswers({});
   };
 
   const handleNewQuiz = () => {
@@ -124,6 +131,12 @@ export default function QuizPage() {
 
         {!quizCompleted ? (
           <QuizInterface questions={questions} onComplete={handleQuizComplete} />
+        ) : showAnswerReview ? (
+          <AnswerReview 
+            questions={questions}
+            userAnswers={userAnswers}
+            onBack={handleBackToResults}
+          />
         ) : quizResults ? (
           <QuizResults
             score={quizResults.score}
