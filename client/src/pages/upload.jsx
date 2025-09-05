@@ -23,7 +23,7 @@ export default function Upload() {
       formData.append("userId", user?.id);
       formData.append("noteSetDescription", options.noteSetDescription);
       //todo: add api
-      const API = "http://localhost:3001";
+      const API = "https://mcq-genius.onrender.com";
 
       // Simulate upload progress
       const progressInterval = setInterval(() => {
