@@ -1,4 +1,4 @@
-# 🧠 MCQ-Genius
+# 🧠 MCQ-Genius  link - https://mcq-genius.vercel.app
 
 A powerful web application that automatically generates Multiple Choice Questions (MCQs) from uploaded documents using AI. Built with React, Node.js, and integrated with various AI services for intelligent question generation.
 ## ✨ Features
