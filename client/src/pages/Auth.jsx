@@ -35,7 +35,7 @@ export default function Auth() {
         <div className="bg-card rounded-lg border border-border p-6 shadow-sm">
           {mode === "signin" ? (
             <SignIn
-              routing="path"
+              routing="hash"
               redirectUrl="/dashboard"
               appearance={{
                 elements: {
@@ -56,7 +56,7 @@ export default function Auth() {
             />
           ) : (
             <SignUp
-              routing="path"
+              routing="hash"
               redirectUrl="/dashboard"
               appearance={{
                 elements: {
