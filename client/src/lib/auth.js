@@ -16,7 +16,8 @@ export function useAuthSync() {
             name: user.fullName || user.firstName || 'User',
           });
         } catch (error) {
-          console.error('Failed to sync user:', error);
+          // Silently fail - user sync is not critical for basic functionality
+          console.warn('User sync failed (this is normal if backend is not running):', error.message);
         }
       };
 
